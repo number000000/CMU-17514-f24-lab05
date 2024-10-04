@@ -15,4 +15,21 @@ public class Road {
     public boolean[] getOccupied() {
         return this.occupied;
     }
+
+    public boolean canMove(int position){
+        if(occupied.length > position){
+            if(!occupied[position]){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void makeOccupied(int position){
+        occupied[position] = true;
+    }
+
+    public void makeUnOccupied(int position){
+        occupied[position] = false;
+    }
 }

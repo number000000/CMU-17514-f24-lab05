@@ -9,7 +9,8 @@ import java.util.List;
  * @author Zishen Wen (F22), Deyuan Chen (S22)
  */
 public class Records {
-    private final List<String[]> records;
+    //private final List<String[]> records;
+    private final List<FroggerID> records;
 
     public Records() {
         this.records = new ArrayList<>();
@@ -26,6 +27,7 @@ public class Records {
      * @param gender      gender of the frogger
      * @return Return false if the record has existed. Else, return true.
      */
+    /* 
     public boolean addRecord(String firstName, String lastName, String phoneNumber,
                              String zipCode, String state, String gender) {
         for (String[] row : this.records) {
@@ -40,6 +42,18 @@ public class Records {
         }
         this.records.add(
                 new String[]{firstName, lastName, phoneNumber, zipCode, state, gender});
+        return true;
+    }
+    */
+
+    public boolean addRecord(FroggerID id){
+        for(FroggerID record : this.records){
+            if(record.equals(id)){
+                return false;
+            }
+        }
+
+        this.records.add(id);
         return true;
     }
 }
